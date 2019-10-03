@@ -1,0 +1,331 @@
+{
+  "version": 8,
+  "name": "hotpink",
+  "sources": {
+    "dnl": {
+      "type": "vector",
+      "tiles": ["http://nnriap587/cgi-bin/kartdata3_s?mode=tile&tilemode=gmap&tile={x}+{y}+{z}&layers=all&map.imagetype=mvt"]
+    }
+  },
+  "sprite": "mapbox://sprites/maaka/cjjsbfukv2a7o2ro0eucvdoaw",
+  "glyphs": "mapbox://fonts/maaka/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "rgba(255,200,255,1)"
+      }
+    },
+    {
+      "id": "Tunnel",
+      "type": "line",
+      "source": "dnl",
+      "maxzoom": 11,
+      "source-layer": "N500Bilveg",
+      "filter": [
+        "==",
+        "medium",
+        "U"
+      ],
+      "paint": {
+        "line-width": 1.5,
+        "line-color": "#fe91c2",
+        "line-dasharray": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "id": "N50Bygningsflate",
+      "type": "fill",
+      "minzoom": 11,
+      "source": "dnl",
+      "source-layer": "N50Bygningsflate",
+      "paint": {
+        "fill-color": "#FE52A2"
+      }
+    },{
+      "id": "N50Vannflate",
+      "type": "fill",
+      "minzoom": 11,
+      "source": "dnl",
+      "source-layer": "N50Vannflate",
+      "filter": ["in", "objtype", "ElvBekk", "InnsjÃ¸"],
+      "paint": {
+        "fill-color": "#fff"
+      }
+    },{
+      "id": "N50Elver",
+      "type": "line",
+      "minzoom": 11,
+      "source": "dnl",
+      "source-layer": "N50Elver",
+      "paint": {
+        "line-width": 1,
+        "line-color": "#fff"
+      }
+    },{
+      "id": "N50Flomlop",
+      "type": "line",
+      "minzoom": 11,
+      "source": "dnl",
+      "source-layer": "N50Flomlop",
+      "paint": {
+        "line-width": 1,
+        "line-color": "#fff"
+      }
+    },{
+      "id": "N50Hoydekurver",
+      "type": "line",
+      "minzoom": 11,
+      "source": "dnl",
+      "source-layer": "N50Hoydekurver",
+      "paint": {
+        "line-width": 0.5,
+        "line-color": "#fff"
+      }
+    },{
+      "id": "N50Jernbane",
+      "type": "line",
+      "minzoom": 11,
+      "source": "dnl",
+      "source-layer": "N50Jernbane",
+      "paint": {
+        "line-width": 4,
+        "line-color": "#fe91c2",
+        "line-dasharray": [
+          0.1,
+          1.2
+        ]
+      }
+    },{
+      "id": "N50Jernbane2",
+      "type": "line",
+      "minzoom": 11,
+      "source": "dnl",
+      "source-layer": "N50Jernbane",
+      "paint": {
+        "line-width": 1,
+        "line-color": "#fe91c2"
+      }
+    },{
+      "id": "N50Bilveg10-12",
+      "type": "line",
+      "source": "dnl",
+      "source-layer": "N50Bilveg",
+      "minzoom": 11,
+      "filter": [
+      "all",
+        [
+          "!=",
+          "medium",
+          "U"
+        ],
+        [
+          "in",
+          "vegkategori",
+          "R","E","F"
+        ]
+      ],
+      "paint": {
+        "line-color": "#fe91c2",
+        "line-width": 3
+    }
+    },{
+      "id": "N50Bilveg12",
+      "type": "line",
+      "source": "dnl",
+      "source-layer": "N50Bilveg",
+      "minzoom": 12,
+      "filter": [
+      "all",
+        [
+          "!=",
+          "medium",
+          "U"
+        ],
+        [
+          "in",
+          "vegkategori",
+          "K"
+        ]
+      ],
+      "paint": {
+        "line-color": "#fe91c2",
+        "line-width": 2
+    }
+    }
+    ,{
+      "id": "N50Bilveg13",
+      "type": "line",
+      "source": "dnl",
+      "source-layer": "N50Bilveg",
+      "minzoom": 13,
+      "filter": [
+      "all",
+        [
+          "!=",
+          "medium",
+          "U"
+        ],
+        [
+          "in",
+          "vegkategori",
+          "P"
+        ]
+      ],
+      "paint": {
+        "line-color": "#fe91c2",
+        "line-width": 1
+    }
+    },{
+      "id": "N50Traktorveg",
+      "type": "line",
+      "source": "dnl",
+      "source-layer": "N50Traktorveg",
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#fe91c2",
+        "line-width": 1
+    }
+    },{
+      "id": "N50Barmarksloype",
+      "type": "line",
+      "source": "dnl",
+      "source-layer": "N50Barmarksloype",
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#fe91c2",
+        "line-width": 1
+    }
+    },{
+      "id": "N50Gangsykkelveg",
+      "type": "line",
+      "source": "dnl",
+      "source-layer": "N50Gangsykkelveg",
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#fe91c2",
+        "line-width": 1
+    }
+    },{
+      "id": "N50Sti",
+      "type": "line",
+      "source": "dnl",
+      "source-layer": "N50Sti",
+      "minzoom": 13,
+      "paint": {
+        "line-color": "#fe91c2",
+        "line-width": 1
+    }
+    },{
+            "id": "place-city-label_500",
+            "type": "symbol",
+            "source": "dnl",
+            "source-layer": "N500Stedsnavn",
+      "minzoom": 8,
+    "maxzoom": 12,
+            "layout": {
+            "symbol-sort-key": ["to-number",["get", "skriftkode"]],
+      "text-font": [
+          "Open Sans Regular"
+        ],
+                "text-field": [
+                    "step",
+                    ["zoom"],
+                    [
+                        "match",
+                        ["to-number",["get", "skriftkode"]],
+                        [1],
+                        ["get", "textstring"],
+                        ""
+                    ],
+                    8,
+                    [
+                         "match",
+                        ["to-number",["get", "skriftkode"]],
+                        [1,2, 3, 4, 8, 10, 18, 25],
+                        ["to-string", ["get", "textstring"]],
+                        ""
+                    ],
+                    10,
+                    [
+                        "match",
+                        ["to-number",["get", "skriftkode"]],
+                        [1,2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 25, 26, 28, 29],
+                        ["to-string", ["get", "textstring"]],
+                        ""
+                    ]
+                ],
+                "text-size": [
+                    "interpolate",
+                    ["linear"],
+                    ["to-number",["get", "skriftkode"]],
+          1, 25,
+          2, 15,
+          3, 13,
+          4, 12, 
+          5, 12,
+          6, 12,
+          7, 10,
+          8, 16,
+          10, 13,
+          11, 11,
+          13, 16,
+      14, 12,
+      15, 18,
+      16, 14,
+      17, 14,
+      18, 11,
+      19, 9,
+      20, 9,
+      21, 11,
+      22, 9,
+      25, 18,
+      26, 16,
+      28, 12,
+      29, 9
+                ]
+            },
+            "paint": {
+                "text-color": "#8b432d",
+      "text-halo-width": [
+                    "step",
+                    ["zoom"],
+                    ["literal",0],
+                    11,
+                    ["literal",2]
+                ],
+      "text-halo-color": "rgb(254,254,254)"
+            }
+        },
+      {
+            "id": "place-city-label_50",
+            "type": "symbol",
+            "source": "dnl",
+            "source-layer": "N50Stedsnavn",
+      "minzoom": 12,
+            "layout": {
+            "symbol-sort-key": ["to-number",["get", "skriftkode"]],
+      "text-font": [
+          "Open Sans Regular"
+        ],
+                "text-field": ["to-string", ["get", "textstring"]],
+                "text-size": ["to-number",["get", "fontsize"]]
+            },
+            "paint": {
+                "text-color": "#8b432d",
+      "text-halo-width": [
+                    "step",
+                    ["zoom"],
+                    ["literal",0],
+                    12,
+                    ["literal",1]
+                ],
+      "text-halo-color": "rgb(254,254,240)"
+            }
+        }
+  ]
+}
