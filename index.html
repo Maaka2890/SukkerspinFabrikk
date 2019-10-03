@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset='utf-8' />
+		<title>Sukkerspin Fabrikk</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css" rel="stylesheet" />
+        <link rel="stylesheet" href="main.css">
+	</head>
+		<body>
+            <center><img width="100" height="100" src="cotton-candy.svg" /><H1> Sukkerspin Fabrikk </H1></center>
+            <center><H2> Dette er et eksempel på hvordan selskaper kan bruke Kartverket Vector Tile-tjeneste for å vise sin beliggenhet i selskapets temafarger. </H2></center>
+		
+        <div class="row">
+        <div class="column">
+            <center><H2>Kontakt oss:</H2>
+            <img width="12" height="12" src="phone-pink.svg" /> 32 11 80 00<br>
+            <a id="link" href="mailto:post@kartverket.no">post@kartverket.no</a><br>
+            Kartverksveien 21, Hønefoss<br>
+
+            <H2>Sources:</H2>
+            <p> Data fra <a id="link" href="https://kartkatalog.geonorge.no/metadata/kartverket/kartdata3-wms/640297dc-0fbf-49c1-9266-1f82ac545260">Kartverket</a>.<br>
+            Styling og front-end powered fra <a id="link" href="https://www.mapbox.com/">mapbox</a>.<br>
+            Icons made by <a id="link" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a id="link" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a><br> is licensed by <a id="link" href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></center>
+        </div>
+        <div class="column" >
+            <center><h2>Åpningstider</h2></center>
+            <center><table>
+            <tr>
+                <td>Mandag:</td>
+                <td>9:00-22:00</td>
+            </tr>
+            <tr>
+                <td>Tirsdag:</td>
+                <td>9:00-22:00</td>
+            </tr>
+            <tr>
+                <td>Onsdag:</td>
+                <td>9:00-22:00</td>
+            </tr>
+            <tr>
+                <td>Torsdag:</td>
+                <td>9:00-22:00</td>
+            </tr>
+            <tr>
+                <td>Fredag:</td>
+                <td>9:00-22:00</td>
+            </tr>
+            <tr>
+                <td>Lørdag:</td>
+                <td>9:00-22:00</td>
+            </tr>
+            <tr>
+                <td>Sundag:</td>
+                <td>9:00-22:00</td>
+            </tr>
+            </table></center>
+        </div>
+        <div class="column">
+            <center><h2>Plasering</h2>
+            <div id="map"></center>
+            </div>
+        </div>
+        </div>
+		
+        <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWFha2EiLCJhIjoiY2lzZnp4eWhvMDAzejJwbnExNmY5ODdsMCJ9.EeEx5fDH-zH3pdvuHMuncg';
+        var map = new mapboxgl.Map({
+            style: 'simple.json',
+            center: [10.248688925359229, 60.143983677450372],
+            zoom: 13,
+            pitch: 60,
+            container: 'map'
+        });
+
+        // The 'building' layer in the mapbox-streets vector source contains building-height
+        // data from OpenStreetMap.
+        map.on('load', function() {
+            // Insert the layer beneath any symbol layer.
+        var layers = map.getStyle().layers;
+        map.loadImage('https://github.com/Maaka2890/SukkerspinFabrikk/blob/master/cotton-candy.png', function(error, image) {
+            if (error) throw error;
+            map.addImage('cotton-candy', image);
+            map.addLayer({
+                "id": "points",
+                "type": "symbol",
+                "source": {
+                    "type": "geojson",
+                    "data": {
+                    "type": "FeatureCollection",
+                    "features": [{
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [10.248688925359229, 60.143983677450372]
+                            }
+                        }]
+                    }
+                },
+                "layout": {
+                    "icon-image": "cotton-candy",
+                    "icon-size": 0.2,
+                    "icon-anchor": "bottom",
+                }
+            });
+        });
+        });
+        </script>
+	</body>
+</html>

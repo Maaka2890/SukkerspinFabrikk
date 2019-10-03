@@ -1,0 +1,56 @@
+html, body {
+      font-family: cursive;
+      width: 100%;
+      background-color: pink;
+      color: white;
+    }
+#map {
+      height: 300px;
+      width: 300px;
+      border-radius: 25px;
+      border: 2px solid #ffffff;
+    }
+#link { color: #fe73b1ff; }
+    .map-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            font-family: sans-serif;
+            overflow: auto;
+            border-radius: 25px;
+            color: pink;
+        }
+    #features {
+    		padding: 10px;
+            top: 0;
+            height: 100px;
+            margin-top: 250px;
+            width: 200px;
+            text-align:center;
+        }
+  .row {
+    display: flex;
+  }
+
+  .column {
+    flex: 33%;
+  }
+  table {
+  font-family: cursive, sans-serif;
+  border-collapse: separate;
+  width: 250px;
+  color: white;
+  border-radius: 25px;
+  -moz-border-radius:25px;
+  border: 2px solid #ffffff;
+}
+
+td, th {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #fe73b1ff;
+}
