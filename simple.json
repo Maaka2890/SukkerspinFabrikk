@@ -1,10 +1,10 @@
 {
   "version": 8,
-  "name": "hotpink",
+  "name": "simple",
   "sources": {
     "dnl": {
       "type": "vector",
-      "tiles": ["http://nnriap587/cgi-bin/kartdata3_s?mode=tile&tilemode=gmap&tile={x}+{y}+{z}&layers=all&map.imagetype=mvt"]
+      "tiles": ["https://wms.geonorge.no/skwms1/wms.kartdata3?mode=tile&tilemode=gmap&tile={x}+{y}+{z}&layers=all&map.imagetype=mvt"]
     }
   },
   "sprite": "mapbox://sprites/maaka/cjjsbfukv2a7o2ro0eucvdoaw",
