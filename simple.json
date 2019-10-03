@@ -4,7 +4,8 @@
   "sources": {
     "dnl": {
       "type": "vector",
-      "tiles": ["https://wms.geonorge.no/skwms1/wms.kartdata3?mode=tile&tilemode=gmap&tile={x}+{y}+{z}&layers=all&map.imagetype=mvt"]
+      //"tiles": ["https://wms.geonorge.no/skwms1/wms.kartdata3?mode=tile&tilemode=gmap&tile={x}+{y}+{z}&layers=all&map.imagetype=mvt"]
+      "tiles": ["https://cache.kartverket.no/dnl/{z}/{x}/{y}.mvt"]
     }
   },
   "sprite": "mapbox://sprites/maaka/cjjsbfukv2a7o2ro0eucvdoaw",
