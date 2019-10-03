@@ -79,7 +79,7 @@
         map.on('load', function() {
             // Insert the layer beneath any symbol layer.
         var layers = map.getStyle().layers;
-        map.loadImage('https://github.com/Maaka2890/SukkerspinFabrikk/blob/master/cotton-candy.png', function(error, image) {
+        map.loadImage('cotton-candy.png', function(error, image) {
             if (error) throw error;
             map.addImage('cotton-candy', image);
             map.addLayer({
